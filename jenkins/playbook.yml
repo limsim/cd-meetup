@@ -1,0 +1,9 @@
+---
+- hosts: local
+
+  tasks:
+  - name: get Jenkins docker image
+    shell: docker pull jenkins:latest
+
+  - name: start dockerise jenkins
+    shell: docker run -d -p 8080:8080 --name myjenkins jenkins
