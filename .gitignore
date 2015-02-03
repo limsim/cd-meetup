@@ -1,4 +1,5 @@
 **/.idea
 **/*.iml
+**/.DS_Store
 meetup-cd-basic/target
 basic-cd-example/bin
