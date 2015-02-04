@@ -15,20 +15,40 @@ public class basicTest {
 
     private WebDriver browser;
     private SeleniumServer seleniumServer;
+    private String environment = System.getProperties().getProperty("environment", "local");
+
+    private static final String USERNAME = "limsim1";
+    private static final String AUTOMATE_KEY = "yU8WsQkyFgysDpuReGP3";
+    private static final String URL = "http://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
 
     @BeforeSuite
     public void openBrowser() throws Exception {
-        seleniumServer = new SeleniumServer();
-        seleniumServer.start();
+        if (environment.equals("local")) {
+            seleniumServer = new SeleniumServer();
+            seleniumServer.start();
 
-        browser = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
-                DesiredCapabilities.firefox());
+            browser = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.firefox());
+        } else if (environment.equals("dev")) {
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setCapability("browser", "Firefox");
+            caps.setCapability("browser_version", "35.0");
+            caps.setCapability("os", "Windows");
+            caps.setCapability("os_version", "8.1");
+            caps.setCapability("resolution", "1024x768");
+            caps.setCapability("browserstack.debug", "true");
+
+            browser = new RemoteWebDriver(new URL(URL), caps);
+        }
     }
 
     @AfterSuite
     public void closeBrowser() {
-        browser.quit();
-        seleniumServer.stop();
+        if (environment.equals("local")) {
+            browser.quit();
+            seleniumServer.stop();
+        } else if (environment.equals("dev")) {
+            browser.quit();
+        }
     }
 
     @Test
