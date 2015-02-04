@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.net.URL;
 
-public class basicTestIT {
+public class basicTest {
 
     private WebDriver browser;
     private SeleniumServer seleniumServer;
@@ -35,7 +35,7 @@ public class basicTestIT {
     public void checkMessage() {
         browser.get("https://s3-eu-west-1.amazonaws.com/cd-meetup-dev/index.html");
         WebElement message = browser.findElement(By.id("tag1"));
-        Assert.assertEquals(message.getText(), "my first page");
+        Assert.assertEquals(message.getText(), "my first page 5");
     }
 
 }
