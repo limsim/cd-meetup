@@ -2,11 +2,15 @@ FROM jenkins
 
 USER root
 
-# CMD apt-get -y update
-# CMD apt-get install software-properties-common
-# CMD apt-add-repository -y ppa:ansible/ansible
-# CMD apt-get -y update
-# CMD apt-get -y install ansible
+RUN apt-get -y update
+# RUN apt-get install -y software-properties-common
+# RUN apt-add-repository -y ppa:ansible/ansible
+# RUN apt-get -y update
+RUN apt-get -y install ansible
+
+RUN git clone git://github.com/boto/boto.git
+WORKDIR boto
+RUN python setup.py install
 
 EXPOSE 8080
 

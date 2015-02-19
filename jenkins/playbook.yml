@@ -3,7 +3,7 @@
 
   tasks:
   - name: get Jenkins docker image
-    shell: docker pull jenkins:latest
+    shell: docker build -t jenkins .
 
   - name: start dockerise jenkins
-    shell: docker run -d -p 8080:8080 --name myjenkins jenkins
+    shell: docker run -d -p 8080:8080 -v /Users/limsim/Documents/workspace/cd-meetup/jenkins/home:/var/jenkins_home --name myjenkins jenkins
