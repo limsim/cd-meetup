@@ -65,7 +65,7 @@ public class basicTest {
         
         browser.get(testUrl);
         WebElement message = browser.findElement(By.id("tag1"));
-        Assert.assertEquals(message.getText(), "my first page 5");
+        Assert.assertEquals(message.getText(), "my first page 7");
     }
 
 }
