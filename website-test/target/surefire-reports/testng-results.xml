@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite1" duration-ms="856" started-at="2015-02-23T21:52:28Z" finished-at="2015-02-23T21:52:29Z">
+    <groups>
+    </groups>
+    <test name="Nopackage" duration-ms="856" started-at="2015-02-23T21:52:28Z" finished-at="2015-02-23T21:52:29Z">
+      <class name="basicTest">
+        <test-method status="PASS" signature="openBrowser()" name="openBrowser" is-config="true" duration-ms="5432" started-at="2015-02-23T21:52:22Z" finished-at="2015-02-23T21:52:28Z">
+        </test-method>
+        <test-method status="PASS" signature="checkMessage()" name="checkMessage" duration-ms="853" started-at="2015-02-23T21:52:28Z" finished-at="2015-02-23T21:52:29Z">
+        </test-method>
+        <test-method status="PASS" signature="closeBrowser()" name="closeBrowser" is-config="true" duration-ms="1917" started-at="2015-02-23T21:52:29Z" finished-at="2015-02-23T21:52:30Z">
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>

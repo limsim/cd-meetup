@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="tt56tt.local" tests="1" failures="0" timestamp="23 Feb 2015 21:52:29 GMT" time="0.856" errors="0">
+  <testcase name="checkMessage" time="0.853" classname="basicTest"/>
+</testsuite>

@@ -6,4 +6,4 @@
     shell: sudo docker build -t jenkins .
 
   - name: start dockerise jenkins
-    shell: sudo docker run -d -p 8080:8080 -v /Users/limsim/Documents/workspace/cd-meetup/jenkins/home:/var/jenkins_home --name myjenkins jenkins
+    shell: sudo docker run -d -p 8080:8080 -v /home/ubuntu/workspace/cd-meetup/jenkins/home:/var/jenkins_home --name myjenkins jenkins
